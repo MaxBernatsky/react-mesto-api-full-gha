@@ -1,4 +1,5 @@
-export const BASE_URL = 'http://localhost:3000';
+// export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'https://api.maxsateon.nomoredomains.monster';
 
 const _checkResponse = (response) => {
   if (response.ok) {

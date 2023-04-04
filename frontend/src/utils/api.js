@@ -87,7 +87,8 @@ export class Api {
   }
 }
 const api = new Api({
-  baseUrl: 'http://localhost:3000',
+  // baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.maxsateon.nomoredomains.monster',
   headers: {
     Authorization: `Bearer ${localStorage.getItem('jwt')}`,
     'Content-Type': 'application/json',
