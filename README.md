@@ -8,7 +8,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.34.81
+IP 158.160.34.81
 
 Frontend https://maxsateon.nomoredomains.monster
 
