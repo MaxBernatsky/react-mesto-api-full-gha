@@ -69,7 +69,7 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((id) => id === currentUser._id);
     api
       .changeLikeCardStatus(card._id, isLiked ? 'DELETE' : 'PUT')
       .then((newCard) => {
@@ -176,14 +176,18 @@ function App() {
 
   useEffect(() => {
     if (loggedIn) {
-      Promise.all([api.getUserProfile(), api.getInitialCards()])
-        .then(([userData, cards]) => {
-          setCurrentUser(userData);
-          setCards(cards);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      const jwt = localStorage.getItem('jwt');
+      if (jwt) {
+        api._headers.Authorization = `Bearer ${jwt}`;
+        Promise.all([api.getUserProfile(), api.getInitialCards()])
+          .then(([userData, cards]) => {
+            setCurrentUser(userData);
+            setCards(cards);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     }
   }, [loggedIn]);
 
