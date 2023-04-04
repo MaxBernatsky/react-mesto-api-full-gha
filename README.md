@@ -8,8 +8,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 158.160.34.81
 
-Frontend https://...
+Frontend https://maxsateon.nomoredomains.monster
 
-Backend https://...
+Backend https://api.maxsateon.nomoredomains.monster

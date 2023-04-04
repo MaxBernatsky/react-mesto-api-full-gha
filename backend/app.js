@@ -1,14 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
+const cors = require('cors');
 const router = require('./routes/index');
 const { middlewaresError } = require('./middlewares/middlewaresError');
 
 const { PORT = 3000 } = process.env;
-
-mongoose.connect('mongodb://127.0.0.1/mestodb');
-
 const app = express();
+app.use(cors());
+mongoose.connect('mongodb://127.0.0.1/mestodb');
 
 app.use(express.json());
 
